@@ -1,0 +1,14 @@
+version: 2.1
+
+jobs:
+  build:
+    parameters:
+      greeting:
+        type: string
+    docker:
+      - image: cimg/base:current-22.04
+    steps:
+      - checkout
+      - run: git remote -v
+      - run: echo "<< parameters.greeting >>"
+      - run: echo "Done"
